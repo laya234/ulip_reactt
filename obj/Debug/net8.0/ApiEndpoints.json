@@ -1,0 +1,1125 @@
+[
+  {
+    "ContainingType": "ULIP_proj.Controllers.ApprovalController",
+    "Method": "ApproveRequest",
+    "RelativePath": "api/Approval/{approvalId}/approve",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "approvalId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "comments",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.ApprovalController",
+    "Method": "RejectRequest",
+    "RelativePath": "api/Approval/{approvalId}/reject",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "approvalId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "comments",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.ApprovalController",
+    "Method": "GetPendingApprovals",
+    "RelativePath": "api/Approval/pending",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.ApprovalController",
+    "Method": "SubmitRequest",
+    "RelativePath": "api/Approval/request",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "RequestId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "RequestType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Reason",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Password",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/Auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "FirstName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "LastName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PhoneNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "DateOfBirth",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "Address",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PanNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Role",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.FundController",
+    "Method": "GetAvailableFunds",
+    "RelativePath": "api/Fund",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.FundController",
+    "Method": "CreateFund",
+    "RelativePath": "api/Fund",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "FundName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FundType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CurrentNAV",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "ExpenseRatio",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "RiskLevel",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.FundController",
+    "Method": "GetFundDetails",
+    "RelativePath": "api/Fund/{fundId}/details",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fundId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.FundController",
+    "Method": "UpdateNAV",
+    "RelativePath": "api/Fund/{fundId}/update-nav",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fundId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "newNAV",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.PolicyController",
+    "Method": "CreatePolicy",
+    "RelativePath": "api/Policy",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PolicyNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PolicyName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SumAssured",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "PremiumAmount",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "PremiumFrequency",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PolicyStartDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "PolicyMaturityDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.PolicyController",
+    "Method": "ApproveSurrender",
+    "RelativePath": "api/Policy/{policyId}/approve-surrender",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "policyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "approved",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "comments",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.PolicyController",
+    "Method": "GetDocumentStatus",
+    "RelativePath": "api/Policy/{policyId}/document-status",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "policyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.PolicyController",
+    "Method": "DownloadDocument",
+    "RelativePath": "api/Policy/{policyId}/download-document/{documentType}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "policyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "documentType",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.PolicyController",
+    "Method": "GenerateStatement",
+    "RelativePath": "api/Policy/{policyId}/generate-statement",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "policyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.PolicyController",
+    "Method": "GetPolicyPortfolio",
+    "RelativePath": "api/Policy/{policyId}/portfolio",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "policyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.PolicyController",
+    "Method": "UploadDocument",
+    "RelativePath": "api/Policy/{policyId}/upload-document",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "policyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "documentType",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.PolicyController",
+    "Method": "VerifyDocuments",
+    "RelativePath": "api/Policy/{policyId}/verify-documents",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "policyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "documentType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "approved",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "comments",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.PolicyController",
+    "Method": "AcceptPolicyProposal",
+    "RelativePath": "api/Policy/accept",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ULIP_proj.DTOs.AcceptProposalRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.PolicyController",
+    "Method": "GetAgentPolicies",
+    "RelativePath": "api/Policy/agent-policies",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.PolicyController",
+    "Method": "GetCompleteDetails",
+    "RelativePath": "api/Policy/complete-details",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ULIP_proj.DTOs.PolicyDetailsRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.PolicyController",
+    "Method": "CreatePolicyProposalForCustomer",
+    "RelativePath": "api/Policy/create-proposal",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "CustomerId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PolicyName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SumAssured",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "PremiumAmount",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "PremiumFrequency",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PolicyStartDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "PolicyMaturityDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.PolicyController",
+    "Method": "GetPolicy",
+    "RelativePath": "api/Policy/details",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ULIP_proj.DTOs.PolicyDetailsRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.PolicyController",
+    "Method": "GetMyPolicies",
+    "RelativePath": "api/Policy/my-policies",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.PolicyController",
+    "Method": "GetPendingProposals",
+    "RelativePath": "api/Policy/pending-proposals",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.PolicyController",
+    "Method": "GetPoliciesWithPendingDocuments",
+    "RelativePath": "api/Policy/pending-verification",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.PolicyController",
+    "Method": "CreatePolicyProposal",
+    "RelativePath": "api/Policy/proposal/{saleId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "saleId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "PolicyName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SumAssured",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "PremiumAmount",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "PremiumFrequency",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PolicyStartDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "PolicyMaturityDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.PolicyController",
+    "Method": "RequestSurrender",
+    "RelativePath": "api/Policy/surrender",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ULIP_proj.DTOs.SurrenderRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.PolicyController",
+    "Method": "GetSurrenderValue",
+    "RelativePath": "api/Policy/surrender-value",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ULIP_proj.DTOs.PolicyDetailsRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.PremiumController",
+    "Method": "CalculateCommission",
+    "RelativePath": "api/Premium/{policyId}/calculate-commission",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "policyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "premiumAmount",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.PremiumController",
+    "Method": "SendReminder",
+    "RelativePath": "api/Premium/{policyId}/send-reminder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "policyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.PremiumController",
+    "Method": "GetOverduePremiums",
+    "RelativePath": "api/Premium/overdue",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.PremiumController",
+    "Method": "PayPremium",
+    "RelativePath": "api/Premium/pay",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.PremiumController",
+    "Method": "GetPremiumSchedule",
+    "RelativePath": "api/Premium/policy/{policyId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "policyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.PremiumController",
+    "Method": "ProcessOverduePolicies",
+    "RelativePath": "api/Premium/process-overdue",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.SaleController",
+    "Method": "ConvertLead",
+    "RelativePath": "api/Sale/{saleId}/convert",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "saleId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "PolicyNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PolicyName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SumAssured",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "PremiumAmount",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "PremiumFrequency",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PolicyStartDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "PolicyMaturityDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.SaleController",
+    "Method": "GetConversionRate",
+    "RelativePath": "api/Sale/conversion-rate",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.SaleController",
+    "Method": "GetDashboardData",
+    "RelativePath": "api/Sale/dashboard-data",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.SaleController",
+    "Method": "DebugSales",
+    "RelativePath": "api/Sale/debug-sales",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.SaleController",
+    "Method": "CreateLead",
+    "RelativePath": "api/Sale/lead",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "CustomerName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CustomerPhone",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "QuotedAmount",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Notes",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.SaleController",
+    "Method": "GetMyPipeline",
+    "RelativePath": "api/Sale/my-pipeline",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.TransactionController",
+    "Method": "RequestApproval",
+    "RelativePath": "api/Transaction/{transactionId}/request-approval",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "transactionId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.TransactionController",
+    "Method": "GetTransactionsByPolicy",
+    "RelativePath": "api/Transaction/by-policy/{policyId}/transactions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "policyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.TransactionController",
+    "Method": "ProcessFundSwitch",
+    "RelativePath": "api/Transaction/fund-switch",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PolicyId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "FromFundId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ToFundId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Amount",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.TransactionController",
+    "Method": "ProcessInvestment",
+    "RelativePath": "api/Transaction/invest",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PolicyId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Amount",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "FundId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.TransactionController",
+    "Method": "GetPolicyCurrentValue",
+    "RelativePath": "api/Transaction/policy/{policyId}/current-value",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "policyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.TransactionController",
+    "Method": "GetPortfolioValue",
+    "RelativePath": "api/Transaction/policy/{policyId}/portfolio-value",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "policyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.UserController",
+    "Method": "GetAllUsers",
+    "RelativePath": "api/User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.UserController",
+    "Method": "GetCommission",
+    "RelativePath": "api/User/commission",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.UserController",
+    "Method": "CustomerLookup",
+    "RelativePath": "api/User/customer-lookup",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ULIP_proj.DTOs.FindCustomerRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.UserController",
+    "Method": "GetDocuments",
+    "RelativePath": "api/User/documents",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.UserController",
+    "Method": "DownloadDocument",
+    "RelativePath": "api/User/download-document/{documentId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "documentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.UserController",
+    "Method": "GetManagers",
+    "RelativePath": "api/User/managers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.UserController",
+    "Method": "GetProfile",
+    "RelativePath": "api/User/profile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.UserController",
+    "Method": "UpdateProfile",
+    "RelativePath": "api/User/profile",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "FirstName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "LastName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PhoneNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Address",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ULIP_proj.Controllers.UserController",
+    "Method": "UploadDocument",
+    "RelativePath": "api/User/upload-document",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "documentType",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

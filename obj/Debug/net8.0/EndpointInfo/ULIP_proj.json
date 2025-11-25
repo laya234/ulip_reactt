@@ -1,0 +1,1931 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "ULIP_proj",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Approval/request": {
+      "post": {
+        "tags": [
+          "Approval"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "RequestId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "RequestType": {
+                    "type": "string"
+                  },
+                  "Reason": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "RequestId": {
+                  "style": "form"
+                },
+                "RequestType": {
+                  "style": "form"
+                },
+                "Reason": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Approval/pending": {
+      "get": {
+        "tags": [
+          "Approval"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Approval/{approvalId}/approve": {
+      "post": {
+        "tags": [
+          "Approval"
+        ],
+        "parameters": [
+          {
+            "name": "approvalId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "comments": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "comments": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Approval/{approvalId}/reject": {
+      "post": {
+        "tags": [
+          "Approval"
+        ],
+        "parameters": [
+          {
+            "name": "approvalId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "comments": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "comments": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Email",
+                  "Password"
+                ],
+                "type": "object",
+                "properties": {
+                  "Email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "Password": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Email": {
+                  "style": "form"
+                },
+                "Password": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Auth/register": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Address",
+                  "DateOfBirth",
+                  "Email",
+                  "FirstName",
+                  "LastName",
+                  "PanNumber",
+                  "Password",
+                  "PhoneNumber",
+                  "Role"
+                ],
+                "type": "object",
+                "properties": {
+                  "FirstName": {
+                    "type": "string"
+                  },
+                  "LastName": {
+                    "type": "string"
+                  },
+                  "Email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "Password": {
+                    "minLength": 6,
+                    "type": "string"
+                  },
+                  "PhoneNumber": {
+                    "type": "string"
+                  },
+                  "DateOfBirth": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "Address": {
+                    "type": "string"
+                  },
+                  "PanNumber": {
+                    "type": "string"
+                  },
+                  "Role": {
+                    "$ref": "#/components/schemas/UserRole"
+                  }
+                }
+              },
+              "encoding": {
+                "FirstName": {
+                  "style": "form"
+                },
+                "LastName": {
+                  "style": "form"
+                },
+                "Email": {
+                  "style": "form"
+                },
+                "Password": {
+                  "style": "form"
+                },
+                "PhoneNumber": {
+                  "style": "form"
+                },
+                "DateOfBirth": {
+                  "style": "form"
+                },
+                "Address": {
+                  "style": "form"
+                },
+                "PanNumber": {
+                  "style": "form"
+                },
+                "Role": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Fund": {
+      "get": {
+        "tags": [
+          "Fund"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Fund"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "CurrentNAV",
+                  "ExpenseRatio",
+                  "FundName",
+                  "FundType",
+                  "RiskLevel"
+                ],
+                "type": "object",
+                "properties": {
+                  "FundName": {
+                    "type": "string"
+                  },
+                  "FundType": {
+                    "$ref": "#/components/schemas/FundType"
+                  },
+                  "CurrentNAV": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "ExpenseRatio": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "RiskLevel": {
+                    "$ref": "#/components/schemas/RiskLevel"
+                  },
+                  "Description": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "FundName": {
+                  "style": "form"
+                },
+                "FundType": {
+                  "style": "form"
+                },
+                "CurrentNAV": {
+                  "style": "form"
+                },
+                "ExpenseRatio": {
+                  "style": "form"
+                },
+                "RiskLevel": {
+                  "style": "form"
+                },
+                "Description": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Fund/{fundId}/update-nav": {
+      "post": {
+        "tags": [
+          "Fund"
+        ],
+        "parameters": [
+          {
+            "name": "fundId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "newNAV": {
+                    "type": "number",
+                    "format": "double"
+                  }
+                }
+              },
+              "encoding": {
+                "newNAV": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Fund/{fundId}/details": {
+      "get": {
+        "tags": [
+          "Fund"
+        ],
+        "parameters": [
+          {
+            "name": "fundId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Policy": {
+      "post": {
+        "tags": [
+          "Policy"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "PolicyMaturityDate",
+                  "PolicyName",
+                  "PolicyNumber",
+                  "PolicyStartDate",
+                  "PremiumAmount",
+                  "PremiumFrequency",
+                  "SumAssured",
+                  "UserId"
+                ],
+                "type": "object",
+                "properties": {
+                  "PolicyNumber": {
+                    "type": "string"
+                  },
+                  "UserId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "PolicyName": {
+                    "type": "string"
+                  },
+                  "SumAssured": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "PremiumAmount": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "PremiumFrequency": {
+                    "$ref": "#/components/schemas/PremiumFrequency"
+                  },
+                  "PolicyStartDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "PolicyMaturityDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                }
+              },
+              "encoding": {
+                "PolicyNumber": {
+                  "style": "form"
+                },
+                "UserId": {
+                  "style": "form"
+                },
+                "PolicyName": {
+                  "style": "form"
+                },
+                "SumAssured": {
+                  "style": "form"
+                },
+                "PremiumAmount": {
+                  "style": "form"
+                },
+                "PremiumFrequency": {
+                  "style": "form"
+                },
+                "PolicyStartDate": {
+                  "style": "form"
+                },
+                "PolicyMaturityDate": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Policy/details": {
+      "post": {
+        "tags": [
+          "Policy"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PolicyDetailsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PolicyDetailsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PolicyDetailsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Policy/my-policies": {
+      "get": {
+        "tags": [
+          "Policy"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Policy/agent-policies": {
+      "get": {
+        "tags": [
+          "Policy"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Policy/surrender": {
+      "post": {
+        "tags": [
+          "Policy"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SurrenderRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SurrenderRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SurrenderRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Policy/surrender-value": {
+      "post": {
+        "tags": [
+          "Policy"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PolicyDetailsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PolicyDetailsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PolicyDetailsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Policy/{policyId}/upload-document": {
+      "post": {
+        "tags": [
+          "Policy"
+        ],
+        "parameters": [
+          {
+            "name": "policyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "documentType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "file": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Policy/{policyId}/verify-documents": {
+      "post": {
+        "tags": [
+          "Policy"
+        ],
+        "parameters": [
+          {
+            "name": "policyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "documentType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "approved",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "comments",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Policy/{policyId}/document-status": {
+      "get": {
+        "tags": [
+          "Policy"
+        ],
+        "parameters": [
+          {
+            "name": "policyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Policy/pending-verification": {
+      "get": {
+        "tags": [
+          "Policy"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Policy/{policyId}/download-document/{documentType}": {
+      "get": {
+        "tags": [
+          "Policy"
+        ],
+        "parameters": [
+          {
+            "name": "policyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "documentType",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Policy/proposal/{saleId}": {
+      "post": {
+        "tags": [
+          "Policy"
+        ],
+        "parameters": [
+          {
+            "name": "saleId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "PolicyMaturityDate",
+                  "PolicyName",
+                  "PolicyStartDate",
+                  "PremiumAmount",
+                  "PremiumFrequency",
+                  "SumAssured"
+                ],
+                "type": "object",
+                "properties": {
+                  "PolicyName": {
+                    "maxLength": 100,
+                    "minLength": 0,
+                    "type": "string"
+                  },
+                  "SumAssured": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "PremiumAmount": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "PremiumFrequency": {
+                    "$ref": "#/components/schemas/PremiumFrequency"
+                  },
+                  "PolicyStartDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "PolicyMaturityDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                }
+              },
+              "encoding": {
+                "PolicyName": {
+                  "style": "form"
+                },
+                "SumAssured": {
+                  "style": "form"
+                },
+                "PremiumAmount": {
+                  "style": "form"
+                },
+                "PremiumFrequency": {
+                  "style": "form"
+                },
+                "PolicyStartDate": {
+                  "style": "form"
+                },
+                "PolicyMaturityDate": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Policy/pending-proposals": {
+      "get": {
+        "tags": [
+          "Policy"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Policy/accept": {
+      "post": {
+        "tags": [
+          "Policy"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AcceptProposalRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AcceptProposalRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AcceptProposalRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Policy/create-proposal": {
+      "post": {
+        "tags": [
+          "Policy"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "PolicyMaturityDate",
+                  "PolicyName",
+                  "PolicyStartDate",
+                  "PremiumAmount",
+                  "PremiumFrequency",
+                  "SumAssured"
+                ],
+                "type": "object",
+                "properties": {
+                  "CustomerId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "PolicyName": {
+                    "maxLength": 100,
+                    "minLength": 0,
+                    "type": "string"
+                  },
+                  "SumAssured": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "PremiumAmount": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "PremiumFrequency": {
+                    "$ref": "#/components/schemas/PremiumFrequency"
+                  },
+                  "PolicyStartDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "PolicyMaturityDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                }
+              },
+              "encoding": {
+                "CustomerId": {
+                  "style": "form"
+                },
+                "PolicyName": {
+                  "style": "form"
+                },
+                "SumAssured": {
+                  "style": "form"
+                },
+                "PremiumAmount": {
+                  "style": "form"
+                },
+                "PremiumFrequency": {
+                  "style": "form"
+                },
+                "PolicyStartDate": {
+                  "style": "form"
+                },
+                "PolicyMaturityDate": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Policy/{policyId}/generate-statement": {
+      "post": {
+        "tags": [
+          "Policy"
+        ],
+        "parameters": [
+          {
+            "name": "policyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Policy/{policyId}/portfolio": {
+      "get": {
+        "tags": [
+          "Policy"
+        ],
+        "parameters": [
+          {
+            "name": "policyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Policy/{policyId}/approve-surrender": {
+      "post": {
+        "tags": [
+          "Policy"
+        ],
+        "parameters": [
+          {
+            "name": "policyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "approved",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "comments",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Policy/complete-details": {
+      "post": {
+        "tags": [
+          "Policy"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PolicyDetailsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PolicyDetailsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PolicyDetailsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Premium/pay": {
+      "post": {
+        "tags": [
+          "Premium"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Premium/overdue": {
+      "get": {
+        "tags": [
+          "Premium"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Premium/{policyId}/send-reminder": {
+      "post": {
+        "tags": [
+          "Premium"
+        ],
+        "parameters": [
+          {
+            "name": "policyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Premium/{policyId}/calculate-commission": {
+      "get": {
+        "tags": [
+          "Premium"
+        ],
+        "parameters": [
+          {
+            "name": "policyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "premiumAmount",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Premium/policy/{policyId}": {
+      "get": {
+        "tags": [
+          "Premium"
+        ],
+        "parameters": [
+          {
+            "name": "policyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Premium/process-overdue": {
+      "post": {
+        "tags": [
+          "Premium"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Sale/lead": {
+      "post": {
+        "tags": [
+          "Sale"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "CustomerName": {
+                    "type": "string"
+                  },
+                  "CustomerPhone": {
+                    "type": "string"
+                  },
+                  "QuotedAmount": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "Notes": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "CustomerName": {
+                  "style": "form"
+                },
+                "CustomerPhone": {
+                  "style": "form"
+                },
+                "QuotedAmount": {
+                  "style": "form"
+                },
+                "Notes": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Sale/{saleId}/convert": {
+      "post": {
+        "tags": [
+          "Sale"
+        ],
+        "parameters": [
+          {
+            "name": "saleId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "PolicyMaturityDate",
+                  "PolicyName",
+                  "PolicyNumber",
+                  "PolicyStartDate",
+                  "PremiumAmount",
+                  "PremiumFrequency",
+                  "SumAssured",
+                  "UserId"
+                ],
+                "type": "object",
+                "properties": {
+                  "PolicyNumber": {
+                    "type": "string"
+                  },
+                  "UserId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "PolicyName": {
+                    "type": "string"
+                  },
+                  "SumAssured": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "PremiumAmount": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "PremiumFrequency": {
+                    "$ref": "#/components/schemas/PremiumFrequency"
+                  },
+                  "PolicyStartDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "PolicyMaturityDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                }
+              },
+              "encoding": {
+                "PolicyNumber": {
+                  "style": "form"
+                },
+                "UserId": {
+                  "style": "form"
+                },
+                "PolicyName": {
+                  "style": "form"
+                },
+                "SumAssured": {
+                  "style": "form"
+                },
+                "PremiumAmount": {
+                  "style": "form"
+                },
+                "PremiumFrequency": {
+                  "style": "form"
+                },
+                "PolicyStartDate": {
+                  "style": "form"
+                },
+                "PolicyMaturityDate": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Sale/my-pipeline": {
+      "get": {
+        "tags": [
+          "Sale"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Sale/conversion-rate": {
+      "get": {
+        "tags": [
+          "Sale"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Sale/dashboard-data": {
+      "get": {
+        "tags": [
+          "Sale"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Sale/debug-sales": {
+      "get": {
+        "tags": [
+          "Sale"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Transaction/invest": {
+      "post": {
+        "tags": [
+          "Transaction"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PolicyId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Amount": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "FundId": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "encoding": {
+                "PolicyId": {
+                  "style": "form"
+                },
+                "Amount": {
+                  "style": "form"
+                },
+                "FundId": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Transaction/fund-switch": {
+      "post": {
+        "tags": [
+          "Transaction"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "PolicyId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "FromFundId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "ToFundId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Amount": {
+                    "type": "number",
+                    "format": "double"
+                  }
+                }
+              },
+              "encoding": {
+                "PolicyId": {
+                  "style": "form"
+                },
+                "FromFundId": {
+                  "style": "form"
+                },
+                "ToFundId": {
+                  "style": "form"
+                },
+                "Amount": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Transaction/{transactionId}/request-approval": {
+      "post": {
+        "tags": [
+          "Transaction"
+        ],
+        "parameters": [
+          {
+            "name": "transactionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Transaction/policy/{policyId}/current-value": {
+      "get": {
+        "tags": [
+          "Transaction"
+        ],
+        "parameters": [
+          {
+            "name": "policyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Transaction/by-policy/{policyId}/transactions": {
+      "get": {
+        "tags": [
+          "Transaction"
+        ],
+        "parameters": [
+          {
+            "name": "policyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Transaction/policy/{policyId}/portfolio-value": {
+      "get": {
+        "tags": [
+          "Transaction"
+        ],
+        "parameters": [
+          {
+            "name": "policyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/profile": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "FirstName": {
+                    "type": "string"
+                  },
+                  "LastName": {
+                    "type": "string"
+                  },
+                  "PhoneNumber": {
+                    "type": "string"
+                  },
+                  "Address": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "FirstName": {
+                  "style": "form"
+                },
+                "LastName": {
+                  "style": "form"
+                },
+                "PhoneNumber": {
+                  "style": "form"
+                },
+                "Address": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/commission": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/managers": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/upload-document": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "documentType": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "file": {
+                  "style": "form"
+                },
+                "documentType": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/documents": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/download-document/{documentId}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "documentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/customer-lookup": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindCustomerRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindCustomerRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindCustomerRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AcceptProposalRequest": {
+        "type": "object",
+        "properties": {
+          "policyId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "accepted": {
+            "type": "boolean"
+          },
+          "requireDocuments": {
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FindCustomerRequest": {
+        "required": [
+          "phoneNumber"
+        ],
+        "type": "object",
+        "properties": {
+          "phoneNumber": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FundType": {
+        "enum": [
+          "Equity",
+          "Debt",
+          "Hybrid",
+          "Balanced"
+        ],
+        "type": "string"
+      },
+      "PolicyDetailsRequest": {
+        "type": "object",
+        "properties": {
+          "policyId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PremiumFrequency": {
+        "enum": [
+          "Monthly",
+          "Quarterly",
+          "HalfYearly",
+          "Yearly"
+        ],
+        "type": "string"
+      },
+      "RiskLevel": {
+        "enum": [
+          "Low",
+          "Medium",
+          "High"
+        ],
+        "type": "string"
+      },
+      "SurrenderRequest": {
+        "type": "object",
+        "properties": {
+          "policyId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reason": {
+            "type": "string",
+            "nullable": true
+          },
+          "managerId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserRole": {
+        "enum": [
+          "Customer",
+          "Agent",
+          "Admin",
+          "Manager"
+        ],
+        "type": "string"
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "JWT Authorization header using the Bearer scheme",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}
